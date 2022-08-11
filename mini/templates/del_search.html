@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete </title>
+    <style>
+		button {
+			color: #ffffff;
+			background-color: #db4d43;
+			font-size: 30px;
+			
+			padding: 10px 30px;
+			cursor: pointer
+		}
+		button:hover {
+			color: #ddd2d2;
+			background-color: #050505;
+		}
+        a{
+            color: #ffffff;
+			background-color: #43C6DB;
+			font-size: 30px;
+			border: 0px solid #000000;
+			border-radius: 13px;
+			padding: 10px 30px;
+			cursor: pointer 
+        }
+        body{
+         
+            margin: 0%;
+            padding-left: 20px;
+            border-top: 0;
+            background-image:  url(static/images/tb3.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        form{
+            color: white;
+        }
+        input{
+            font-size: 20px;
+            border-radius: 5px;
+            border-color: #000000;
+        }
+        label{
+            font-size: 30px;
+        }
+        div{
+            margin: 0%;
+        }
+        select{
+            font-size: 30px;
+        }
+        img{
+            position:relative;
+            top:-140px;
+            left:50%;
+        }
+        </style>
+</head>
+<body>
+    <div>   <center>
+
+        <h1 style="font-size: 50px;color: #080606;background-color: aqua;">Delete Customer</h1> </center></div>
+        <br><h3 style="font-size: 30px;color: #000000;"> Enter the available Id's mentioned :</h3>
+        <form action="/del_search" method='POST'>
+            
+            
+            <br><label style="font-size: 30px;font-weight:bold;color: #000000;">Customer ID :</label>
+            <input type = "number" name="id"><br>
+            <h3 style="font-size: 30px;color: #020101;">{% if message %}
+                <p>{{ message }}</p>
+                    {% endif %}</h3>
+                    {% for item in res %}
+                    <h3 style="font-size: 30px;color: #020101;"> {{item}}</h3>
+                    {% endfor %}
+                    
+                    
+                    
+            
+            <br><button type="submit" name="delete">Delete</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                           
+        </form>
+        
+       
+        
+        
+</body>
+</html>
+

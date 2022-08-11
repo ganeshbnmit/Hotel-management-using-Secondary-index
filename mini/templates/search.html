@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+		button {
+			color: #ffffff;
+			background-color: #50db43;
+			font-size: 30px;
+		
+			padding: 10px 30px;
+			cursor: pointer
+		}
+		button:hover {
+			color: #dad2d2;
+			background-color: #0d0b0b;
+		}
+        body{
+         
+            margin: 0%;
+            padding-left: 20px;
+            border-top: 0;
+            background-image:  url(static/images/lok.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        form{
+            color: white;
+        }
+        input{
+            font-size: 20px;
+            border-radius: 5px;
+            border-color: #000000;
+        }
+        label{
+            font-size: 30px;
+        }
+        div{
+            margin: 0%;
+        }
+        select{
+            font-size: 30px;
+        }
+        input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+input[type=number] {
+ 
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+        </style>
+</head>
+<body>
+    
+    <div>   <center>
+
+        <h1 style="font-size: 50px;color: #000000;font-style: italic;background-color: aqua;">Search Customer</h1> </center></div>
+        <br><h3 style="font-size: 30px;color: #fdfdfd;"> Enter the customer name to Search </h3>
+        <form action='/search' method='POST'>
+           
+                
+            <br><label style="font-size: 30px;font-weight:bold;color: #3d0909;">customer name :</label>
+            <input type = "text" name="name"><br>
+            <br><button type="submit" >Search</button>
+            <h3 style="font-size: 30px;color: #e7e3e3;">{% if message %}
+                <p>{{ message }}</p>
+                    {% endif %}</h3>
+                    {% for item in res %}
+                    <h3 style="font-size: 30px;color: #ffffff;"> {{item}}</h3>
+                    {% endfor %}
+        </form>
+        
+       
+        <center>
+        
+</body>
+</html>
+
+

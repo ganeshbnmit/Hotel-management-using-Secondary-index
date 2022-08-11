@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+    <style>
+		button {
+			color: #0e0b0b;
+			background-color: #d6db43;
+			font-size: 30px;
+			
+			
+			padding: 10px 30px;
+			cursor: pointer
+		}
+        a{
+           
+                color: #080808;
+                
+                font-size: 30px;
+                border: 0px solid #000000;
+                border-radius: 13px;
+                padding: 10px 30px;
+                cursor: pointer
+            
+        }
+		button:hover {
+			color: #c6b3b3;
+			background-color: #141010;
+		}
+        body{
+         
+            margin: 0%;
+            padding-left: 20px;
+            border-top: 0;
+            background-image:  url(static/images/room2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        form{
+            color: rgb(73, 233, 233);
+            
+        }
+        input{
+            font-size: 20px;
+            border-radius: 5px;
+            border:none;
+            border-color: #d3cece;
+        }
+        label{
+            font-size: 30px;
+            color:aqua
+            
+            
+        }
+        div{
+            margin: 0%;
+        }
+        select{
+            font-size: 30px;
+        }
+        input[type=text] {
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+input[type=number] {
+ 
+  width: 50%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+      
+        </style>
+        <script>
+            function validate(){
+                var name=document.add.name;
+                var ID=document.add.ID;
+                var desc=document.add.desc;
+                var price=document.add.price;
+                var mname=document.add.mname;
+                
+                if (name.value.length <= 0) {
+                    alert('Customer Name is required');
+                    name.focus();
+                    return false;
+                }
+                if (ID.value.length <= 0) {
+                    alert('ID is required');
+                    ID.focus();
+                    return false;
+                }
+                if (desc.value.length <= 0) {
+                    alert('Address and phone is required');
+                    desc.focus();
+                    return false;
+                }
+                if (price.value.length <= 0) {
+                    alert('Price is required');
+                    price.focus();
+                    return false;
+                }
+                if (mname.value.length <= 0) {
+                    alert('RoomType is required');
+                    mname.focus();
+                    return false;
+                }
+
+            }
+        </script>
+</head>
+<body>
+    <div>
+        
+
+                           
+           <center>
+        <h1 style="font-size: 50px;color: #131313;font-style:oblique;">Room Booking</h1> </center></div>
+        
+                           
+        <form action="/list" method='POST' name="add" onsubmit="return validate() ">
+            <label style="font-size: 30px;font-weight:bold;color: #dbd7d7;">customer Name:</label>
+            <input type = "text" name="name"><br>
+            <br><label style="font-size: 30px;font-weight:bold;color: #e8dfdf;">customer ID :</label>
+            <input type = "number" name="ID"><br>
+            
+            <br><label style="font-size: 30px;font-weight:bold;color:#ededed">Address and phone :</label>
+            <input type="text" style="height: 30px;width: 200px;" name="desc">
+            <br>
+            <br><label style="font-size: 30px;font-weight:bold;color:#f0e6e6">Price :</label>
+            <input type = "number" name="price"><br>
+            <br><label style="font-size: 30px;font-weight:bold;color:#f0f0f0">Room type</label>
+            <input type = "text" name="mname"><br>
+            <br><button type="submit" name="submit">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br><br><br>-
+           
+                          
+        </form>
+                            
+</body>
+</html>

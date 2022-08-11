@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    <style>
+      a{
+           
+        color: #070606;
+        
+        font-size: 30px;
+        border: 0px solid #000000;
+        border-radius: 13px;
+        padding: 10px 30px;
+        cursor: pointer
+    
+}
+        body{
+         
+           
+           
+            
+            background-image:  url(static/images/red2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        table{
+                  margin-left: 150px;
+          background-color: rgb(48, 80, 108);
+          border:5px solid rgb(255, 255, 255);
+          border-style: dotted;
+          width:80%;
+         
+        }
+        th, td ,tr{
+            font-size: 30px;
+          padding: 15px;
+          text-align: center;
+          border-color: #000000;
+          color:rgb(242, 236, 236);
+        }
+        th{
+          text-align:left;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <div>  
+      <br>
+      <br>
+      <a href="/">Home</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <center>
+        <h1 style="font-size: 50px;color: #090808;">CUSTOMER DETAILS</h1> </center></div>
+        <h3 style="font-size: 30px;color: #0c0b0b;">{% if message %}
+        <p>{{ message }}</p>
+            {% endif %}</h3>
+        
+            <h3 style="font-size: 30px;color: #000000;"> The customer present In hotel are :</h3>
+        <br>
+        <table>
+          
+          <tr>
+            <td>Customer ID</td>
+            <td>Name Of customer</td>
+            
+            <td>Description</td>
+            <td>Price</td>
+            <td>Room type</td>
+          </tr>
+          
+            
+                
+          {% for item in arrayOfproducts %}
+          <tr>
+          {%for i in item %}
+          
+            <td>{{i}}</td>
+          
+          {% endfor %}
+        </tr>
+          {% endfor %}
+        </table>
+            
+
+       
+        <center>
+        
+</body>
+</html>
+
+
